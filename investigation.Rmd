@@ -1,0 +1,6 @@
+---
+title: "Exponential distribution investigation"
+author: "Srijan Nayak"
+date: "05/08/2020"
+output: pdf_document
+---
