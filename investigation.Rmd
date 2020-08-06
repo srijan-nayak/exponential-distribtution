@@ -8,6 +8,10 @@ output: pdf_document
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
+```{r load_ggplot2}
+library(ggplot2)
+```
+
 ## Simulations
 
 ```{r random_seed}
@@ -25,3 +29,20 @@ means_sample <- apply(matrix(rexp(1000 * 40, lambda), ncol = 40), 1, mean)
 
 A sample of 1000 random exponentials and a sample of 1000 means of 40 random
 exponentials each are taken with $\lambda = 0.2$.
+
+## Theoretical mean vs. sample mean
+
+```{r mean_comparison, fig.height=3}
+theoretical_mean <- 1 / lambda
+sample_mean <- mean(means_sample)
+# plot distribution of sample means with markers on theoretical and sample mean
+ggplot() +
+  geom_histogram(aes(x = means_sample), bins = 15) +
+  geom_vline(aes(xintercept = theoretical_mean, color = "Theoretical mean"), size = 1) +
+  geom_vline(aes(xintercept = sample_mean, color = "Sample mean"), size = 1) +
+  scale_color_manual(name = "", values = c("#53DFA2", "#DF5390"), guide = "legend") +
+  labs(title = "Distribution of sample means", x = "Means")
+```
+As seen in the figure, the theoretical mean and the mean of the sample means are
+very close. The theoretical mean, given by $\frac{1}{\lambda}$ is
+`r theoretical_mean`, while the sample mean is `r sample_mean`.
