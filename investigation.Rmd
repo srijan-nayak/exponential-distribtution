@@ -16,9 +16,12 @@ set.seed(42)
 ```
 
 ```{r sample_generation}
-# get a sample of 1000 exponentials with lambda = 0.2
 lambda <- 0.2
+# get a sample of 1000 exponentials with lambda = 0.2
 exp_sample <- rexp(1000, lambda)
+# get 1000 means of 40 random exponentials with lambda = 0.2 each
+means_sample <- apply(matrix(rexp(1000 * 40, lambda), ncol = 40), 1, mean)
 ```
 
-A sample of 1000 random exponentials is taken with $\lambda = 0.2$.
+A sample of 1000 random exponentials and a sample of 1000 means of 40 random
+exponentials each are taken with $\lambda = 0.2$.
