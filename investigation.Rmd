@@ -4,3 +4,23 @@ author: "Srijan Nayak"
 date: "05/08/2020"
 output: pdf_document
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE)
+```
+
+## Simulations
+
+```{r random_seed}
+# set the seed for random simulations
+set.seed(42)
+```
+
+```{r sample_generation}
+# get a sample of 1000 exponentials with lambda = 0.2
+lambda <- 0.2
+exp_sample <- rexp(1000, lambda)
+```
+
+A sample of 1000 random exponentials is taken with $\lambda = 0.2$.
+
