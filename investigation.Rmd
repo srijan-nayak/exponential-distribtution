@@ -65,4 +65,5 @@ sample_variance <- sd(means_sample)^2
 ```
 
 Using the above formula, theoretical variance is `r theoretical_variance`, while
-the variance of the sample means is `r sample_variance`.
+the variance of the sample means is `r sample_variance`, which are again
+reasonably close to each other.
