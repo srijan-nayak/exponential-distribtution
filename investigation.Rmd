@@ -82,7 +82,7 @@ reasonably close to each other.
 ```{r sample_distribution, fig.height=3}
 ggplot() +
   geom_histogram(aes(x = exp_sample), bins = 15) +
-  labs(title = "Distribution of exponential sample", x = TeX("$\\textit{x}$"))
+  labs(title = "Distribution of sample of exponentials", x = TeX("$\\textit{x}$"))
 ```
 
 The histogram of the 1000 random exponentials, as expected, looks like an
