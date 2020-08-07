@@ -42,7 +42,7 @@ ggplot() +
   geom_vline(aes(xintercept = theoretical_mean, color = "Theoretical mean"), size = 1) +
   geom_vline(aes(xintercept = sample_mean, color = "Sample mean"), size = 1) +
   scale_color_manual(name = "", values = c("#53DFA2", "#DF5390"), guide = "legend") +
-  labs(title = "Distribution of sample means", x = "Means")
+  labs(title = "Distribution of sample means", x = TeX("$\\textit{\\bar{x}}$"))
 ```
 As seen in the figure, the theoretical mean and the mean of the sample means are
 very close. The theoretical mean, given by $\frac{1}{\lambda}$ is
