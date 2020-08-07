@@ -8,8 +8,9 @@ output: pdf_document
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
-```{r load_ggplot2}
+```{r load_libraries}
 library(ggplot2)
+library(latex2exp)
 ```
 
 ## Simulations
@@ -67,3 +68,24 @@ sample_variance <- sd(means_sample)^2
 Using the above formula, theoretical variance is `r theoretical_variance`, while
 the variance of the sample means is `r sample_variance`, which are again
 reasonably close to each other.
+
+## Distributions
+
+```{r sample_distribution, fig.height=3}
+ggplot() +
+  geom_histogram(aes(x = exp_sample), bins = 15) +
+  labs(title = "Distribution of exponential sample", x = TeX("$\\textit{x}$"))
+```
+
+The histogram of the 1000 random exponentials, as expected, looks like an
+exponential distribution.
+
+```{r sample_means_distribution, fig.height=3}
+ggplot() +
+  geom_histogram(aes(x = means_sample), bins = 15) +
+  labs(title = "Distribution of sample means", x = TeX("$\\textit{\\bar{x}$"))
+```
+
+But the distribution of 1000 sample means, of 40 random exponentials each, looks
+like a bell. Thus the sample means of 1000 random exponentials follow a normal
+distribution as given by the central limit theorem.
