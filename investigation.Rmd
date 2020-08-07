@@ -10,6 +10,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 ```
 
 ```{r load_libraries}
+# load libraries for plotting and using LaTeX in plots
 library(ggplot2)
 library(latex2exp)
 ```
@@ -80,6 +81,7 @@ reasonably close to each other.
 ## Distributions
 
 ```{r sample_distribution, fig.height=3}
+# plot histogram of sample of exponentials
 ggplot() +
   geom_histogram(aes(x = exp_sample), bins = 15) +
   labs(title = "Distribution of sample of exponentials", x = TeX("$\\textit{x}$"))
@@ -89,6 +91,7 @@ The histogram of the 1000 random exponentials, as expected, looks like an
 exponential distribution.
 
 ```{r sample_means_distribution, fig.height=3}
+# plot histogram of sample means
 ggplot() +
   geom_histogram(aes(x = means_sample), bins = 15) +
   labs(title = "Distribution of sample means", x = TeX("$\\textit{\\bar{x}$"))
