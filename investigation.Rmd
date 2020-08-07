@@ -62,7 +62,7 @@ The theoretical variance of the sample means is given by the square of the
 standard error of the sampled exponential distribution, i.e.
 $$
 \textit{Variance of sample means}
-= \textit{Standard error}^2
+= (\textit{Standard error})^2
 = \left( \frac{\frac{1}{\lambda}} {\sqrt[2]{n}} \right)^2
 = \frac{1}{\lambda^2n}
 $$
