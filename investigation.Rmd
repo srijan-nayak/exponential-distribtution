@@ -46,3 +46,23 @@ ggplot() +
 As seen in the figure, the theoretical mean and the mean of the sample means are
 very close. The theoretical mean, given by $\frac{1}{\lambda}$ is
 `r theoretical_mean`, while the sample mean is `r sample_mean`.
+
+## Theoretical variance vs. sample variance
+
+The theoretical variance of the sample means is given by the square of the
+standard error of the sampled exponential distribution, i.e.
+$$
+\textit{Variance of sample means}
+= \textit{Standard error}^2
+= \left( \frac{\frac{1}{\lambda}} {\sqrt[2]{n}} \right)^2
+= \frac{1}{\lambda^2n}
+$$
+
+```{r variance_comparison}
+# calculate the theoretical and sample variance of the sample means
+theoretical_variance <- 1 / (lambda^2 * 40)
+sample_variance <- sd(means_sample)^2
+```
+
+Using the above formula, theoretical variance is `r theoretical_variance`, while
+the variance of the sample means is `r sample_variance`.
